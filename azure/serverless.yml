@@ -1,0 +1,18 @@
+# serverless deploy
+# serverless remove
+service: graphql
+provider:
+  name: azure
+  runtime: nodejs12
+  location: West US
+  memorySize: 128
+functions:
+  graphql:
+    handler: index.graphql
+    events:
+      - http: true
+        authLevel: anonymous
+        methods:
+          - post
+plugins:
+  - serverless-azure-functions

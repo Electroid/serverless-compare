@@ -1,0 +1,15 @@
+# artillery run benchmark.yml
+config:
+  target: "<INSERT_SERVERLESS_URL_HERE>"
+  phases:
+    - duration: 3600
+      arrivalRate: 1
+scenarios:
+  - flow:
+    - post:
+        url: "/"
+        body: '{"operationName":null,"variables":{},"query":"{\n  hello\n}\n"}'
+        headers: # Google requires this header or else their function will not work!
+          Content-Type: 'application/json'
+        expect:
+          - statusCode: 200

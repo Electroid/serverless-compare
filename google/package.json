@@ -1,0 +1,14 @@
+{
+  "name": "graphql",
+  "description": "A serverless benchmark, as a simple GraphQL server",
+  "repository": "https://github.com/cloudflare/serverless-benchmark",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "apollo-server-cloud-functions": "^2.16.0",
+    "serverless-google-cloudfunctions": "^3.1.0"
+  }
+}

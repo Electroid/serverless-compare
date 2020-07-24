@@ -1,0 +1,21 @@
+# serverless deploy
+# serverless remove
+service: graphql
+provider:
+  name: google
+  runtime: nodejs12
+  region: us-central1
+  memorySize: 128
+  credentials: <INSERT_PATH_TO_CREDENTIALS_JSON>
+  project: <INSERT_PROJECT_ID>
+functions:
+  graphql:
+    handler: graphql
+    events:
+      - http: /
+package:
+  include:
+    - index.js
+    - node_modules/
+plugins:
+  - serverless-google-cloudfunctions
